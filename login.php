@@ -7,14 +7,11 @@
     <title>Document</title>
 </head>
 <body>
-    <form action="signup.php" method="post">
-        <input type="text" name="name" placeholder="Full Name" required>
+    <form action="login.php" method="post">
         <input type="email" name="email" placeholder="Email" required>
         <input type="password" name="password" placeholder="Password" required>
-        <input type="password" name="confirm_password" placeholder="Confirm Password" required>
-        <button type="submit" name="signup">Signup</button>
+        <button type="submit" name="login">Login</button>
     </form>
-    
     <ul>
         <?php
             if(count($errors) > 0){
@@ -24,6 +21,5 @@
             }
         ?>
     </ul>
-    
 </body>
 </html>
