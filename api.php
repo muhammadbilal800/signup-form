@@ -1,6 +1,7 @@
 <?php
     include('./connection.php');
     date_default_timezone_set("Asia/Karachi");
+    session_start();
     $errors = [];
 
     if(isset($_POST['add_student'])){
@@ -68,7 +69,8 @@
                 $sql = "INSERT into users (name, email, password, created_at, updated_at) VALUES ('$name', '$email', '$password_encrypted', '$date', '$date')";
                 $result = mysqli_query($con, $sql);
                 if($result){
-                    echo "Signup Success!";
+                    // echo "Signup Success!";
+                    header('Location: login.php');
                 }
             }else{
                 array_push($errors, "User already exist");
@@ -94,10 +96,18 @@
             $result = mysqli_query($con, $sql);
             
             if(mysqli_num_rows($result) == 1){
-                echo "Login Success";
+                // echo "Login Success";
+                $_SESSION['admin-panel-login'] = true;
+                header('Location: admin.php');
             }else{
                 array_push($errors, "Email and password does not match!");
             }
         }
+    }
+
+    // Logout
+    if(isset($_POST['logout'])){
+        unset($_SESSION['admin-panel-login']);
+        header('Location: login.php');
     }
 ?>

@@ -1,4 +1,11 @@
 <?php include_once('./api.php') ?>
+<?php 
+    if(isset($_SESSION['admin-panel-login'])){
+        if($_SESSION['admin-panel-login'] == true){
+            header('Location: admin.php');
+        }
+    }
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -15,15 +22,7 @@
         <button type="submit" name="signup">Signup</button>
     </form>
     
-    <ul>
-        <?php
-            if(count($errors) > 0){
-                foreach($errors as $error){
-                    echo "<li>$error</li>";
-                }
-            }
-        ?>
-    </ul>
+    <?php include_once('./errors.php'); ?>
     
 </body>
 </html>
