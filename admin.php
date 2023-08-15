@@ -1,4 +1,4 @@
-<?php include_once('./api.php'); ?>
+<?php include('./apis/api.php'); ?>
 <?php 
     if($_SESSION['admin-panel-login'] != true){
         header('Location: login.php');
@@ -18,34 +18,40 @@
     </form><br><br>
     <form action="admin.php" method="post">
         <input type="text" name="name" placeholder="Name">
-        <input type="text" name="class" placeholder="Class">
-        <input type="number" name="roll" placeholder="Roll Number">
-        <button type="submit" name="add_student">Submit</button>
+        <input type="number" name="price" step="0.01" placeholder="Price">
+        <button type="submit" name="add_product">Submit</button>
     </form>
     <form action="index.php" method="get">
         <input type="search" name="search" placeholder="Search by name...">
         <button type="submit">Search</button>
     </form>
-    <!-- <ul>
+    <ul>
         <?php 
-            /*if(isset($_GET['search'])){
+            if(isset($_GET['search'])){
                 $search = $_GET['search'];
-                $sql = "SELECT * from classes WHERE name LIKE '%$search%'";
+                $sql = "SELECT * from products WHERE name LIKE '%$search%'";
             }else{
-                $sql = "SELECT * from classes";
+                $sql = "SELECT * from products";
             }
             $result = mysqli_query($con, $sql);
             if(mysqli_num_rows($result) > 0){
                 while($row = mysqli_fetch_assoc($result)){
+                    $id = $row['id'];
                     $name = $row['name'];
-                    $class = $row['class'];
-                    $roll = $row['roll_number'];
-                    echo "<li>$name - $class - $roll</li>";
+                    $price = number_format($row['price'], 2);
+                    echo "<li>$name - $$price
+                    
+                    <form action='admin.php' method='post'>
+                        <input type='hidden' value='$id' name='id'>
+                        <button type='submit' name='delete'>X</button>
+                    </form>
+                    
+                    </li>";
                 }
             }else{
                 echo "No Data exist in database";
-            }*/
+            }
         ?>
-    </ul> -->
+    </ul>
 </body>
 </html>

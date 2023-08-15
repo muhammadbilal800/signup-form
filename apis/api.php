@@ -1,29 +1,38 @@
 <?php
-    include('./connection.php');
+    require 'connection.php';
     date_default_timezone_set("Asia/Karachi");
     session_start();
     $errors = [];
 
-    if(isset($_POST['add_student'])){
-        $name = $_POST['name'];
-        $class = $_POST['class'];
-        $roll = $_POST['roll'];
-
-        $date = date('d/m/y H:i:s A');
-
-        $sql = "INSERT INTO classes (name, class, roll_number, created_at, updated_at) VALUES ('$name', '$class', $roll, '$date', '$date')";
-
-        $result = mysqli_query($con, $sql);
-        if($result){
-            echo "Data has been inserted!";
-        }else{
-            echo "There is an error with the query!";
-        }
-    }
-
     function sqlCheck($con, $field){
         return htmlspecialchars(mysqli_real_escape_string($con, $field));
     }
+
+    if(isset($_POST['add_product'])){
+        $name = sqlCheck($con, $_POST['name']);
+        $price = sqlCheck($con, $_POST['price']);
+
+        if(!$name){
+            array_push($errors, "Name field is required");
+        }
+        if(!$price){
+            array_push($errors, "Price field is required");
+        }
+        $date = date('d/m/y H:i:s A');
+
+        if(count($errors) == 0){
+            $sql = "INSERT INTO products (name, price, created_at, updated_at) VALUES ('$name', $price, '$date', '$date')";
+
+            $result = mysqli_query($con, $sql);
+            if($result){
+                echo "Product has been inserted!";
+            }else{
+                echo "There is an error with the query!";
+            }
+        }
+    }
+
+    
     // Signup API
     if(isset($_POST['signup'])){
 
@@ -109,5 +118,22 @@
     if(isset($_POST['logout'])){
         unset($_SESSION['admin-panel-login']);
         header('Location: login.php');
+    }
+
+
+    // Delete
+    if(isset($_POST['delete'])){
+        $id = sqlCheck($con, $_POST['id']);
+        if(!$id){
+            array_push($errors, "There is something wrong!");
+        }
+
+        if(count($errors) == 0){
+            $sql = "DELETE from products WHERE id = '$id'";
+            $result = mysqli_query($con, $sql);
+            if($result){
+                echo "Product has been deleted!";
+            }
+        }
     }
 ?>

@@ -1,4 +1,4 @@
-<?php include_once('./api.php') ?>
+<?php include('./apis/api.php') ?>
 <?php 
     if(isset($_SESSION['admin-panel-login'])){
         if($_SESSION['admin-panel-login'] == true){
@@ -22,7 +22,7 @@
         <button type="submit" name="signup">Signup</button>
     </form>
     
-    <?php include_once('./errors.php'); ?>
+    <?php include_once('./apis/errors.php'); ?>
     
 </body>
 </html>
