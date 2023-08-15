@@ -21,7 +21,7 @@
         $date = date('d/m/y H:i:s A');
 
         if(count($errors) == 0){
-            $sql = "INSERT INTO products (name, price, created_at, updated_at) VALUES ('$name', $price, '$date', '$date')";
+            $sql = "INSERT INTO products (name, price, created_at, updated_at) VALUES ('$name', '$price', '$date', '$date')";
 
             $result = mysqli_query($con, $sql);
             if($result){

@@ -1,4 +1,4 @@
-<?php include('./apis/api.php') ?>
+<?php include('./apis/api.php'); ?>
 <?php 
     if(isset($_SESSION['admin-panel-login'])){
         if($_SESSION['admin-panel-login'] == true){
