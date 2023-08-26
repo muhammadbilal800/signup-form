@@ -162,4 +162,29 @@
             }
         }
     }
+
+
+
+    if(isset($_POST['commented'])){
+        $name = sqlCheck($con, $_POST['name']);
+        $comment = sqlCheck($con, $_POST['comment']);
+        $product_id = sqlCheck($con, $_POST['product']);
+
+        if(!$name){
+            array_push($errors, 'Name is required');
+        }
+        if(!$comment){
+            array_push($errors, 'Comment is required');
+        }
+
+        $date = date('d/m/y H:i:s A');
+
+        if(count($errors) == 0){
+            $sql = "INSERT into comments(name, product_id, comment, created_at) VALUES ('$name', $product_id, '$comment', '$date')";
+            $result = mysqli_query($con, $sql);
+            if($result){
+                echo "Comment has been posted!";
+            }
+        }
+    }
 ?>

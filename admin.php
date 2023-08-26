@@ -13,6 +13,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <link rel="stylesheet" href="./assets/css/app.css">
 </head>
 <body>
 
@@ -30,52 +31,54 @@
         <input type="search" name="search" placeholder="Search by name...">
         <button type="submit">Search</button>
     </form>
-    <table>
-        <tr>
-            <th>Image</th>
-            <th>Name</th>
-            <th>Price</th>
-            <th>Slug</th>
-            <th>Created</th>
-            <th>Updated</th>
-            <th>Delete</th>
-        </tr>
-        <?php 
-            if(isset($_GET['search'])){
-                $search = $_GET['search'];
-                $sql = "SELECT * from products WHERE name LIKE '%$search%'";
-            }else{
-                $sql = "SELECT * from products";
-            }
-            $result = mysqli_query($con, $sql);
-            if(mysqli_num_rows($result) > 0){
-                while($row = mysqli_fetch_assoc($result)){
-                    $id = $row['id'];
-                    $name = $row['name'];
-                    $image = $row['image'];
-                    $slug = $row['slug'];
-                    $created = $row['created_at'];
-                    $updated = $row['updated_at'];
-                    $price = number_format($row['price'], 2);
-                    echo "<tr>
-                    
-                    <td><img src='./assets/product_images/$image' width='50px'></td>
-                    <td>$name</td>
-                    <td>$price</td>
-                    <td>$slug</td>
-                    <td>$created</td>
-                    <td>$updated</td>
-                    
-                    <td><form action='admin.php' method='post'>
-                    <input type='hidden' value='$id' name='id'>
-                    <button type='submit' name='delete'>X</button>
-                </form></td>
-                    </tr>";
+    <div class="w-full">
+        <table class="w-full">
+            <tr>
+                <th>Image</th>
+                <th>Name</th>
+                <th>Price</th>
+                <th>Slug</th>
+                <th>Created</th>
+                <th>Updated</th>
+                <th>Delete</th>
+            </tr>
+            <?php 
+                if(isset($_GET['search'])){
+                    $search = $_GET['search'];
+                    $sql = "SELECT * from products WHERE name LIKE '%$search%'";
+                }else{
+                    $sql = "SELECT * from products";
                 }
-            }else{
-                echo "No Data exist in database";
-            }
-        ?>
-    </table>
+                $result = mysqli_query($con, $sql);
+                if(mysqli_num_rows($result) > 0){
+                    while($row = mysqli_fetch_assoc($result)){
+                        $id = $row['id'];
+                        $name = $row['name'];
+                        $image = $row['image'];
+                        $slug = $row['slug'];
+                        $created = $row['created_at'];
+                        $updated = $row['updated_at'];
+                        $price = number_format($row['price'], 2);
+                        echo "<tr>
+                        
+                        <td><img src='./assets/product_images/$image' width='50px'></td>
+                        <td>$name</td>
+                        <td>$$price</td>
+                        <td>$slug</td>
+                        <td>$created</td>
+                        <td>$updated</td>
+                        
+                        <td><form action='admin.php' method='post'>
+                        <input type='hidden' value='$id' name='id'>
+                        <button type='submit' name='delete'>X</button>
+                    </form></td>
+                        </tr>";
+                    }
+                }else{
+                    echo "No Data exist in database";
+                }
+            ?>
+        </table>
+    </div>
 </body>
 </html>
