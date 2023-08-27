@@ -1,6 +1,6 @@
 <nav class="bg-white w-full shadow-sm">
-    <div class="flex items-center justify-between mb-6 max-w-[90%] m-auto">
-        <a href="/"><img src="https://preview.colorlib.com/theme/ogani/img/logo.png.webp"></a>
+    <div class="flex items-center justify-between  max-w-[90%] m-auto">
+        <a href="index.php"><img src="https://logodix.com/logo/609402.png" width="180px" ></a>
         <ul class="flex items-center 910:hidden">
             <li><a class="mr-4 font-semibold text-green-500 text-lg" href="index.php">Home</a></li>
             <li><a class="ml-16 font-semibold text-lg  hover:text-green-500 "href="signup.php">Signup</a></li>

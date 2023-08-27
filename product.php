@@ -7,7 +7,7 @@
     if(mysqli_num_rows($result) == 1){
         $row = mysqli_fetch_assoc($result);
     }else{
-        header('Location: home.php');
+        header('Location: index.php');
     }
 ?>
 <!DOCTYPE html>

@@ -26,6 +26,7 @@
     "glob": "^7.1.6",
     "glob-parent": "^6.0.2",
     "has": "^1.0.3",
+    "i": "^0.3.7",
     "inflight": "^1.0.6",
     "inherits": "^2.0.4",
     "is-binary-path": "^2.1.0",

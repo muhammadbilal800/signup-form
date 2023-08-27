@@ -10,7 +10,7 @@
 
 </head>
 <body>
-     <div class="w-full py-2  bg-[#f5f5f5] mb-2" >
+     <div class="w-full py-2  bg-[#f5f5f5] " >
         <div class="  max-w-[90%] m-auto " >
             <div class="flex items-center justify-between " >
                 <ul class="flex items-center justify-between " >
@@ -45,17 +45,17 @@
                         <li class="mr-2" ><a href="/"><img src="https://api.iconify.design/material-symbols:keyboard-arrow-down-rounded.svg?color=%23ffffff" width="15px" ></a></li>
                     </ul>
                     <ul class="p-4 border-gray-300 border-2" >
-                        <li class="mb-3 "><a href="/">Fresh Meat</a></li>
-                        <li class="mb-3 "><a href="/">Vegetables</a></li>
-                        <li class="mb-3 "> <a href="/">Fresh Bananas</a></li>
-                        <li class="mb-3 "><a href="/">Fruit & Nut Gifts</a></li>
-                        <li class="mb-3 "><a href="/">Fresh Berries</a></li>
-                        <li class="mb-3 "><a href="/">Ocean Foods</a></li>
-                        <li class="mb-3 "><a href="/">Butter & Eggs</a></li>
-                        <li class="mb-3 "><a href="/">Fastfood</a></li>
-                        <li class="mb-3 "><a href="/">Fresh Onion</a></li>
-                        <li class="mb-3 "><a href="/">Papayaya & Crisps</a></li>
-                        <li class="mb-3 "> <a href="/">Oatmeal</a></li>
+                        <li class="mb-3 "><a href="/">Mou'se</a></li>
+                        <li class="mb-3 "><a href="/">Monitor</a></li>
+                        <li class="mb-3 "> <a href="/">Keyboard</a></li>
+                        <li class="mb-3 "><a href="/">Gaming Controller's</a></li>
+                        <li class="mb-3 "><a href="/">Smart Watches</a></li>
+                        <li class="mb-3 "><a href="/">Speaker</a></li>
+                        <li class="mb-3 "><a href="/">Gaming Chair</a></li>
+                        <li class="mb-3 "><a href="/">Mouse Pad</a></li>
+                        <li class="mb-3 "><a href="/">Gaming Mouse</a></li>
+                        <li class="mb-3 "><a href="/">Web Cam</a></li>
+                        <li class="mb-3 "> <a href="/">Gaming Keyboard</a></li>
                     </ul>
                 </div> 
              
@@ -82,15 +82,17 @@
 
                         </div>
 
-                        <div class="overflow-hidden bg-cover w-[100%] h-[431px] mb-2 bg-no-repeat right-0 " style="background-image: url('./image6.jpg') " >
+                       <div
+                        class="overflow-hidden bg-cover w-[100%] h-[431px] mb-2 bg-no-repeat right-0  " style="background-image: url('https://img.freepik.com/free-photo/shopping-bag-cart_23-2148879372.jpg') " > 
                             <div class="mt-28 ml-8" >
-                                <span class="text-[#7fad39] font-semibold text-lg " >FRUIT FRESH</span>
-                                <h2 class="text-5xl font-extrabold mb-2" >Vegetable </h2>
-                                <h2 class="text-5xl font-extrabold">100% Organic</h2>
-                                <p class=" text-[#6f6f6f] text-base font-normal mb-8 mt-2 ">Free Pickup and Delivery Available</p>
-                                <a class="bg-[#7fad39] px-4 py-2 text-white font-bold text-lg " href="/">Shop Now</a>
+                                <span class="text-[#85b142] font-semibold text-lg " >End of Season Sale</span>
+                                <h2 class="text-5xl font-extrabold mb-2" >Top Products.</h2>
+                                <h2 class="text-5xl font-extrabold">Incredible Prices.</h2>
+                                <p class=" text-[#b03535] text-base font-normal mb-8 mt-2 ">Bigger Orders,Bigger Savings</p>
+                                <a class="bg-[#7fad39] px-4 py-2 text-white font-bold text-lg " href="index.php">Shop Now</a>
                             </div>
                         </div>
+                      
                 </div>
               
             
@@ -99,11 +101,12 @@
                 <h1 class="text-center text-4xl font-bold mt-8 mb-8">Featured Products</h1>
                
                 <ul class="flex items-center justify-center mb-12" >
-                    <li class="mr-6"><u>All</u></li>
-                    <li class="mr-6">Vegetable</li>
-                    <li class="mr-6">Fresh Meat</li>
-                    <li class="mr-6">Oranges</li>
-                    <li class="mr-6">Fast Food</li>
+                    <li class="mr-6"><u class="font-semibold"><a href="index.php">Smart Watches</a>
+                    </u></li>
+                    <li class="mr-6"><a href="index.php">Headset</a></li>
+                    <li class="mr-6"><a href="index.php">Gaming Controller</a></li>
+                    <li class="mr-6"><a href="index.php">Airpods</a></li>
+                    <li class="mr-6"><a href="index.php">Magnetic Cables</a></li>
                 </ul>
                 <div class="grid grid-cols-4 gap-10 mb-12 750:grid-cols-3" >
                     
@@ -146,7 +149,7 @@
                        
                    
                     <ul class="mr-4">
-                        <a class="mt-4 mb-8 inline-block" href="/"><img src="https://preview.colorlib.com/theme/ogani/img/logo.png.webp"></a>
+                        <a class="mt-4 mb-8 inline-block" href="index.php"><img src="https://logodix.com/logo/609402.png" width="180px" ></a>
                         <li class="mb-3">Address: 60-49 Road 11378 New York</li>
                         <li class="mb-3">Phone: +65 11.188.888</li>
                         <li class="mb-3">Email: hello@colorlib.com</li>
@@ -155,24 +158,24 @@
                     <div class="mr-4 " >
                         <h2 class="mb-3 font-bold">Useful Links</h2>
                        <ul>
-                        <li class="mb-3"><a href="/">About Us</a></li>
-                        <li class="mb-3"><a href="/">About Our Shop</a>
+                        <li class="mb-3"><a href="index.php">About Us</a></li>
+                        <li class="mb-3"><a href="index.php">About Our Shop</a>
                         </li class="mb-3">
-                        <li class="mb-3"><a href="/">Delivery infomation</a></li>
-                        <li class="mb-3"><a href="/">Privacy Policy</a>
+                        <li class="mb-3"><a href="index.php">Delivery infomation</a></li>
+                        <li class="mb-3"><a href="index.php">Privacy Policy</a>
                         </li>
-                        <li class="mb-3"><a href="/">Our Sitemap</a></li>
+                        <li class="mb-3"><a href="index.php">Our Sitemap</a></li>
                        </ul>
                     </div>
                     <div class="mr-4 " >
                         <ul >
                             
-                            <li class="mt-8 "><a href="/">Who We Are</a></li>
-                        <li class="mt-2"><a href="/">Our Services</a></li>
-                        <li class="mt-2"><a href="/">Projects</a></li>
-                        <li class="mt-2"><a href="/">Contact</a></li>
-                        <li class="mt-2"><a href="/">Innovation</a></li>
-                        <li class="mt-2"><a href="/">Testimonials
+                            <li class="mt-8 "><a href="index.php">Who We Are</a></li>
+                        <li class="mt-2"><a href="index.php">Our Services</a></li>
+                        <li class="mt-2"><a href="index.php">Projects</a></li>
+                        <li class="mt-2"><a href="index.php">Contact</a></li>
+                        <li class="mt-2"><a href="index.php">Innovation</a></li>
+                        <li class="mt-2"><a href="index.php">Testimonials
                         </a></li>
                         </ul>
                     </div>
@@ -184,10 +187,10 @@
                             <button class="p-3 bg-green-600 text-white" type="submit" >SUBSCRIBE</button>
                         </form>
                         <ul class="mt-8 flex items-center" >
-                            <li class="p-2 bg-[#ffffff] rounded-full mr-4 hover:bg-green-500 hover:text-color-white"><a href="/"><img src="https://api.iconify.design/ion:social-facebook.svg?color=%23000000" width="25px"></a></li>
-                            <li class="p-2 bg-[#ffffff] rounded-full mr-4 hover:bg-green-500"><a href="/"><img src="https://api.iconify.design/mdi:twitter.svg?color=%23000000" width="25px"></a></li>
-                            <li class="p-2 bg-[#ffffff] rounded-full mr-4 hover:bg-green-500"><a href="/"><img src="https://api.iconify.design/ri:linkedin-fill.svg?color=%23000000" width="25px"></a></li>
-                            <li class="p-2 bg-[#ffffff] rounded-full mr-4 hover:bg-green-500"><a href="/"><img src="https://api.iconify.design/formkit:pinterest.svg?color=%23000000" width="25px"></a></li>
+                            <li class="p-2 bg-[#ffffff] rounded-full mr-4 hover:bg-green-500 hover:text-color-white"><a href="index.php"><img src="https://api.iconify.design/ion:social-facebook.svg?color=%23000000" width="25px"></a></li>
+                            <li class="p-2 bg-[#ffffff] rounded-full mr-4 hover:bg-green-500"><a href="index.php"><img src="https://api.iconify.design/mdi:twitter.svg?color=%23000000" width="25px"></a></li>
+                            <li class="p-2 bg-[#ffffff] rounded-full mr-4 hover:bg-green-500"><a href="index.php"><img src="https://api.iconify.design/ri:linkedin-fill.svg?color=%23000000" width="25px"></a></li>
+                            <li class="p-2 bg-[#ffffff] rounded-full mr-4 hover:bg-green-500"><a href="index.php"><img src="https://api.iconify.design/formkit:pinterest.svg?color=%23000000" width="25px"></a></li>
                         </ul>
                     </div>
                 </div>
@@ -196,14 +199,14 @@
                     <ul class="flex items-center  " >
                         
                      <li>Copyright ©2023 All rights reserved | This template is made with</li>
-                       <li><a class="flex items-center" href=""><img src="https://api.iconify.design/ic:round-favorite.svg?color=%23000000" width="20px" ></a></li>
+                       <li><a class="flex items-center" href="index.php"><img src="https://api.iconify.design/ic:round-favorite.svg?color=%23000000" width="20px" ></a></li>
                        <li class="mr-1">by</li>
-                       <li class="text-blue-500 hover:text-transparent "><a href="/">Colorlib</a></li>
+                       <li class="text-blue-500 hover:text-transparent "><a href="index.php">Colorlib</a></li>
                     </ul>
                     <ul class=" flex items-center justify-between">
-                        <li class="mr-3"><a href="/"><img src="https://services.youngicee.com/wp-content/uploads/2022/11/Skrill-Payments-in-Nigeria.jpg" width="70px"></a></li>
-                        <li class="mr-3"><a href="/"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/c5/Bitcoin_logo.svg/2560px-Bitcoin_logo.svg.png" width="70px"></a></li>
-                        <li class="mr-3"><a href="/"><img src="https://1000logos.net/wp-content/uploads/2017/05/PayPal-Logo-1999.png" width="70px"></a></li>
+                        <li class="mr-3"><a href="index.php"><img src="https://services.youngicee.com/wp-content/uploads/2022/11/Skrill-Payments-in-Nigeria.jpg" width="70px"></a></li>
+                        <li class="mr-3"><a href="index.php"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/c5/Bitcoin_logo.svg/2560px-Bitcoin_logo.svg.png" width="70px"></a></li>
+                        <li class="mr-3"><a href="index.php"><img src="https://1000logos.net/wp-content/uploads/2017/05/PayPal-Logo-1999.png" width="70px"></a></li>
                     </ul>
             
                  

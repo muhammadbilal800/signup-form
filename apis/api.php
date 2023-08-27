@@ -163,7 +163,7 @@
         }
     }
 
-
+    // Commented Products
 
     if(isset($_POST['commented'])){
         $name = sqlCheck($con, $_POST['name']);
