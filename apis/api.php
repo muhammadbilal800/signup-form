@@ -166,6 +166,11 @@
     // Commented Products
 
     if(isset($_POST['commented'])){
+
+        if(!isset($_SESSION['admin-panel-login'])){
+            header('Location: login.php');
+        }
+
         $name = sqlCheck($con, $_POST['name']);
         $comment = sqlCheck($con, $_POST['comment']);
         $product_id = sqlCheck($con, $_POST['product']);
@@ -175,12 +180,15 @@
         }
         if(!$comment){
             array_push($errors, 'Comment is required');
+            
         }
 
         $date = date('d/m/y H:i:s A');
 
         if(count($errors) == 0){
-            $sql = "INSERT into comments(name, product_id, comment, created_at) VALUES ('$name', $product_id, '$comment', '$date')";
+            $email = $_SESSION['login-data']['email'];
+
+            $sql = "INSERT into comments(name, email, product_id, comment, created_at) VALUES ('$name', '$email', $product_id, '$comment', '$date')";
             $result = mysqli_query($con, $sql);
             if($result){
                 echo "Comment has been posted!";

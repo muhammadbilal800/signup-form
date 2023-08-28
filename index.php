@@ -7,6 +7,7 @@
     <title>Document</title>
     <link rel="stylesheet" href="./assets/css/app.css">
     <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/lazysizes/5.3.2/lazysizes.min.js" integrity="sha512-q583ppKrCRc7N5O0n2nzUiJ+suUv7Et1JGels4bXOaMFQcamPk9HjdUknZuuFjBNs7tsMuadge5k9RzdmO+1GQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 
 </head>
 <body>
@@ -122,7 +123,7 @@
                             echo "
                             <div class='w-full bg-gray-100 p-3 rounded-lg flex flex-col'>
                                 <div class='bg-white rounded-lg overflow-hidden h-[300px] flex items-center justify-center'>
-                                    <img src='./assets/product_images/$image' class='w-[95%]' alt='$name image'>
+                                    <img data-src='./assets/product_images/$image' class='lazyload w-[95%]' alt='$name image'>
                                 </div>
                                 <div class='p-3'>
                                     <h3 class='font-semibold text-lg'>$name</h3>
