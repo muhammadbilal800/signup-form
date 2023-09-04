@@ -8,10 +8,9 @@
     <link rel="stylesheet" href="./assets/css/app.css">
     <script src="https://cdn.tailwindcss.com"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/lazysizes/5.3.2/lazysizes.min.js" integrity="sha512-q583ppKrCRc7N5O0n2nzUiJ+suUv7Et1JGels4bXOaMFQcamPk9HjdUknZuuFjBNs7tsMuadge5k9RzdmO+1GQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-
 </head>
 <body>
-     <div class="w-full py-2  bg-[#f5f5f5] " >
+     <div class="w-full py-2  bg-[#f5f5f5]  mb-3" >
         <div class="  max-w-[90%] m-auto " >
             <div class="flex items-center justify-between " >
                 <ul class="flex items-center justify-between " >
@@ -66,7 +65,7 @@
                           <h1 class="ml-2 font-bold text-lg ">All Categories</h1>
                           <span class="flex ml-2 " ><img class="mr-4" src="https://api.iconify.design/material-symbols:keyboard-arrow-down.svg?color=%23000000">|</span>
                           <form action="">
-                              <input class="border-none ml-2 mr-56 " type="text" placeholder="What do you neend?" >
+                              <input class="border-none ml-2 mr-56 focus:outline-none" type="text" placeholder="What do you neend?" >
                               <button class="font-semibold text-lg px-6 py-[10px] bottom-[1px] inline-block border-none absolute bg-green-600 text-white" type="submit" >Search</button>
                           </form>
                         </div>
@@ -86,7 +85,7 @@
                        <div
                         class="overflow-hidden bg-cover w-[100%] h-[431px] mb-2 bg-no-repeat right-0  " style="background-image: url('https://img.freepik.com/free-photo/shopping-bag-cart_23-2148879372.jpg') " > 
                             <div class="mt-28 ml-8" >
-                                <span class="text-[#85b142] font-semibold text-lg " >End of Season Sale</span>
+                                <span class="text-white font-semibold text-lg " >End of Season Sale</span>
                                 <h2 class="text-5xl font-extrabold mb-2" >Top Products.</h2>
                                 <h2 class="text-5xl font-extrabold">Incredible Prices.</h2>
                                 <p class=" text-[#b03535] text-base font-normal mb-8 mt-2 ">Bigger Orders,Bigger Savings</p>
@@ -112,7 +111,15 @@
                 <div class="grid grid-cols-4 gap-10 mb-12 750:grid-cols-3" >
                     
                 <?php 
-                    $sql = "SELECT * from products WHERE is_active = true";
+                     $limit=4;
+                     if(isset($_GET['page'])){
+                        $page=$_GET['page'];
+                     }else{
+                        $page=1;
+                     }
+                     $offset=($page-1) * $limit;
+                    $sql = "SELECT * from products  WHERE is_active = true LIMIT $offset, $limit ";
+            
                     $result = mysqli_query($con, $sql);
                     if(mysqli_num_rows($result) > 0){
                         while($row = mysqli_fetch_assoc($result)){
@@ -136,11 +143,27 @@
                             ";
                         }
                     }
-                
-                
+                    $api="SELECT COUNT(*) from products";
+                    $totalRes=mysqli_query($con,$api);
+                    $totalRows=mysqli_fetch_array($totalRes)[0];
+                    $totalPages=ceil($totalRows/$limit);
                 ?>
                 </div>
             </div>
+            <ul class='text-center mb-4'>
+                <a class='ml-5 py-2 px-4  bg-indigo-600 text-white font-semibold rounded-lg' href="?page=1">First</a>
+                <a class='ml-5 px-2 py-1  text-black font-bold border-2 border-black border-solid bg-[#d9ead3] rounded-lg' href="<?php if ($page <= 1) { echo '#'; } else { echo "?page=" . ($page - 1); } ?>"><<</a>
+
+                <?php
+                 for($i=1;$i<=$totalPages;$i++){
+                    echo "<a class='ml-5 px-2 py-1 text-black font-bold border-2 border-black border-solid ' href='?page=$i'>".$i."</a>";
+                 }
+                
+                
+                ?>
+               <a class='ml-5 px-2 py-1  text-black font-bold border-2 border-black border-solid bg-[#d9ead3] rounded-lg' href="<?php if ($page == $totalPages) { echo '#'; } else { echo "?page=" . ($page + 1); } ?>">>></a>
+                <a class='ml-5 py-2 px-4  bg-indigo-600 text-white font-semibold rounded-lg ' href="?page=<?php echo $totalPages; ?>">Last</a>
+            </ul>
         </section>
        
             <footer class=" w-full bg-[#F3F6FA] pt-[70px] pb-3" >
@@ -169,7 +192,7 @@
                        </ul>
                     </div>
                     <div class="mr-4 " >
-                        <ul >
+                        <ul>
                             
                             <li class="mt-8 "><a href="index.php">Who We Are</a></li>
                         <li class="mt-2"><a href="index.php">Our Services</a></li>
@@ -184,14 +207,14 @@
                         <h2 class="mb-3 font-bold" >Join Our Newsletter Now</h2>
                         <p class="mb-12" >Get E-mail updates about our latest shop and special offers.</p>
                         <form  class="mb-3 border-gray-400 " action="#">
-                            <input class="w-[70%] p-3 "  type="text" placeholder="Enter your mail" >
+                            <input class="w-[70%] p-3 focus:outline-none "  type="text" placeholder="Enter your mail" >
                             <button class="p-3 bg-green-600 text-white" type="submit" >SUBSCRIBE</button>
                         </form>
                         <ul class="mt-8 flex items-center" >
                             <li class="p-2 bg-[#ffffff] rounded-full mr-4 hover:bg-green-500 hover:text-color-white"><a href="index.php"><img src="https://api.iconify.design/ion:social-facebook.svg?color=%23000000" width="25px"></a></li>
-                            <li class="p-2 bg-[#ffffff] rounded-full mr-4 hover:bg-green-500"><a href="index.php"><img src="https://api.iconify.design/mdi:twitter.svg?color=%23000000" width="25px"></a></li>
+                            <li class="p-2 bg-[#ffffff] rounded-full mr-4 hover:bg-green-500"><a href="index.php"><img src="https://api.iconify.design/mdi:twitter.svg?color=%23000000"  width="25px" class="hover:text-white" ></a></li>
                             <li class="p-2 bg-[#ffffff] rounded-full mr-4 hover:bg-green-500"><a href="index.php"><img src="https://api.iconify.design/ri:linkedin-fill.svg?color=%23000000" width="25px"></a></li>
-                            <li class="p-2 bg-[#ffffff] rounded-full mr-4 hover:bg-green-500"><a href="index.php"><img src="https://api.iconify.design/formkit:pinterest.svg?color=%23000000" width="25px"></a></li>
+                            <li class="p-2 bg-[#ffffff] rounded-full mr-4 hover:bg-green-500 "><a href="index.php"><img src="https://api.iconify.design/formkit:pinterest.svg?color=%23000000" width="25px"></a></li>
                         </ul>
                     </div>
                 </div>
@@ -205,7 +228,7 @@
                        <li class="text-blue-500 hover:text-transparent "><a href="index.php">Colorlib</a></li>
                     </ul>
                     <ul class=" flex items-center justify-between">
-                        <li class="mr-3"><a href="index.php"><img src="https://services.youngicee.com/wp-content/uploads/2022/11/Skrill-Payments-in-Nigeria.jpg" width="70px"></a></li>
+                        <li class="mr-3"><a href="index.php"><img src="https://www.skrill.com/typo3conf/ext/theme2020/Resources/Public/images/Skrill-Logo.svg" width="60px"></a></li>
                         <li class="mr-3"><a href="index.php"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/c5/Bitcoin_logo.svg/2560px-Bitcoin_logo.svg.png" width="70px"></a></li>
                         <li class="mr-3"><a href="index.php"><img src="https://1000logos.net/wp-content/uploads/2017/05/PayPal-Logo-1999.png" width="70px"></a></li>
                     </ul>

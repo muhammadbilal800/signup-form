@@ -163,6 +163,22 @@
         }
     }
 
+    // Delete Comment
+    if(isset($_POST['delete_comment'])){
+        $id = sqlCheck($con, $_POST['id']);
+        if(!$id){
+            array_push($errors, "There is something wrong!");
+        }
+
+        if(count($errors) == 0){
+            $sql = "DELETE from comments WHERE id = '$id'";
+            $result = mysqli_query($con, $sql);
+            if($result){
+                echo "Comment has been deleted!";
+            }
+        }
+    }
+
     // Commented Products
 
     if(isset($_POST['commented'])){

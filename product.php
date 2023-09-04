@@ -1,5 +1,5 @@
 <?php
-    include_once('./apis/api.php');
+    include('./apis/api.php');
 
     $slug = $_GET['product'];
     $sql = "SELECT * from products WHERE slug = '$slug'";
@@ -7,7 +7,8 @@
     $name = "";
     if(mysqli_num_rows($result) == 1){
         $row = mysqli_fetch_assoc($result);
-    }else{
+    }
+    else{
         header('Location: index.php');
     }
 
@@ -47,11 +48,11 @@
             </form>
 
             <?php 
-                $sql = "SELECT products.*, comments.* FROM products LEFT JOIN comments ON products.id = comments.product_id WHERE products.id = " . $row['id'] . " ORDER BY comments.id DESC";
-                ;
-
+                $api = "SELECT products.*, comments.* FROM products LEFT JOIN comments ON products.id = comments.product_id WHERE products.id = " . $row['id'] . " ORDER BY comments.id DESC";
+                
+              
                 // $sql = "SELECT * from comments WHERE product_id = ".$row['id'];
-                $results = mysqli_query($con, $sql);
+                $results = mysqli_query($con, $api);
                 if(mysqli_num_rows($results)){
                     while($rows = mysqli_fetch_assoc($results)){
                         $name = $rows['name'];
